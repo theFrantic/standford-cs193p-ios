@@ -16,6 +16,7 @@
 
 @implementation Deck
 
+// This initialization follows the lazy initialization pattern
 - (NSMutableArray *)cards {
     if (!_cards) {
         _cards = [[NSMutableArray alloc] init];     //Lazy initialization
