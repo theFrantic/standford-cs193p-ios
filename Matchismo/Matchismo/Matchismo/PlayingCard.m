@@ -28,11 +28,15 @@
     
     if ([otherCards count] != 0) {
         if ([otherCards count] == 1) {
-            PlayingCard *otherCard = [otherCards firstObject];
-            if ([self.suit isEqualToString:otherCard.suit]) {
-                return score = 1;
-            } else if (self.rank == otherCard.rank) {
-                return score = 4;
+            id card = [otherCards firstObject];
+            // Here we verify if card is a PlayingCard object
+            if ([card isKindOfClass:[PlayingCard class]]) {
+                PlayingCard *otherCard = (PlayingCard *) card;
+                if ([self.suit isEqualToString:otherCard.suit]) {
+                    return score = 1;
+                } else if (self.rank == otherCard.rank) {
+                    return score = 4;
+                }
             }
         } else {
             for (Card *otherCard in otherCards) score += [self match:@[otherCard]];
