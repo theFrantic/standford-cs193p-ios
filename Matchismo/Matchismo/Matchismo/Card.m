@@ -27,4 +27,16 @@
     return score;
 }
 
+
+
+- (void)turnToMatch
+{
+    self.matched = YES;
+}
+
+- (void)turnToUnchosen
+{
+    self.chosen = NO;
+}
+
 @end
