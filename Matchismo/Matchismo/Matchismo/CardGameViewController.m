@@ -46,8 +46,9 @@
     }
     return _game;
 }
-- (Deck *)createDeck {
-    return [[PlayingCardDeck alloc] init];
+
+- (Deck *)createDeck {  //abstract
+    return nil;
 }
 
 //Touch card action
